@@ -3,8 +3,8 @@ package sort;
 import common.PrintUtil;
 
 public class MergeSort {
-    private static int[] arr1 = new int[]{100, 2, 3, 4, 5, 6, 7};
-    private static int[] arr2 = new int[]{10, 20, 90, 80, 30};
+    private static int[] arr1 = new int[]{2, 3, 4, 5, 6, 7};
+    private static int[] arr2 = new int[]{10, 20, 90, 180, 300};
 
     public static void main(String[] args) {
 
@@ -30,10 +30,12 @@ public class MergeSort {
                 }else {
                     newArr[i] = arr2[point2++];
                 }
+                continue;
             }
 
             if (isEnd(arr1, point1)){
                 newArr[i] = arr2[point2++];
+                continue;
             }
 
             if (isEnd(arr2, point2)){
@@ -45,6 +47,6 @@ public class MergeSort {
     }
 
     private static boolean isEnd(int[] arr, int point) {
-        return point == arr.length - 1;
+        return point > arr.length - 1;
     }
 }
